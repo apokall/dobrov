@@ -45,14 +45,14 @@ if(class_exists('Pixgraphy_Plus_Features')){
 				<!-- end #site-title -->
 			<?php endif; ?>
 		</div>
-		<!-- end #site-branding -->	
+		<!-- end #site-branding -->
 		<?php endif;
 		if($pixgraphy_settings['pixgraphy_buttom_social_icons'] == 0):
 			do_action('social_links');
 		endif;
 		if(class_exists('Pixgraphy_Plus_Features')){
 			do_action('pixgraphy_footer_menu');
-		}	
+		}
 		do_action('pixgraphy_sitegenerator_footer'); ?>
 			<div style="clear:both;"></div>
 		</div> <!-- end .container -->

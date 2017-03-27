@@ -1249,17 +1249,18 @@ img#wpstats {
 }
 #primary {
 	float: left;
-	width: 70%;
+	width: 100%;
 }
 
 /* 19.0 Sidebars
 ================================================== */
+/*
 #secondary {
 	float: left;
 	padding-left: 30px;
 	width: 30%;
 }
-
+/*
 /* 20.0 Post
 ================================================== */
 .entry-header {

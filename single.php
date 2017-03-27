@@ -32,11 +32,11 @@ get_header();
 			the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class();?>>
 				<header class="entry-header">
-					<?php 
+					<?php
 					$entry_format_meta_blog = $pixgraphy_settings['pixgraphy_entry_meta_blog'];
 					if($entry_format_meta_blog == 'show-meta' ){?>
 					<div class="entry-meta">
-						<?php	
+						<?php
 						$format = get_post_format();
 						if ( current_theme_supports( 'post-formats', $format ) ) {
 							printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
@@ -67,7 +67,7 @@ get_header();
 					endif; ?>
 		<div class="entry-content clearfix">
 			<?php the_content();
-			wp_link_pages( array( 
+			wp_link_pages( array(
 				'before'			=> '<div style="clear: both;"></div><div class="pagination clearfix">'.__( 'Pages:', 'pixgraphy' ),
 				'after'			=> '</div>',
 				'link_before'	=> '<span>',
@@ -81,14 +81,14 @@ get_header();
 				<footer class="entry-footer">
 					<?php if($disable_entry_format !='show-button'){ ?>
 					<span class="cat-links">
-					<?php esc_html_e('Category : ','pixgraphy');  the_category(', '); ?>
+					<?php esc_html_e('Темы : ','pixgraphy');  the_category(', '); ?>
 					</span> <!-- end .cat-links -->
 					<?php $tag_list = get_the_tag_list( '', __( ', ', 'pixgraphy' ) );
 						if(!empty($tag_list)){ ?>
 						<span class="tag-links">
 						<?php   echo $tag_list; ?>
 						</span> <!-- end .tag-links -->
-						<?php } 
+						<?php }
 					} ?>
 				</footer> <!-- .entry-meta -->
 			<?php }
@@ -112,7 +112,7 @@ get_header();
 	<h1 class="entry-title"> <?php esc_html_e( 'No Posts Found.', 'pixgraphy' ); ?> </h1>
 	<?php } ?>
 	</main> <!-- #main -->
-	<?php 
+	<?php
 	if( 'default' == $layout ) { //Settings from customizer
 		if(($pixgraphy_settings['pixgraphy_sidebar_layout_options'] != 'nosidebar') && ($pixgraphy_settings['pixgraphy_sidebar_layout_options'] != 'fullwidth')): ?>
 </div> <!-- #primary -->

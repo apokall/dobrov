@@ -43,7 +43,7 @@ if($pixgraphy_settings['pixgraphy_photography_layout'] != 'photography_layout'){
 							</figure><!-- end.post-featured-image  -->
 						</div> <!-- end.post-image-content -->
 					<?php } ?>
-			
+
 			<div class="entry-content">
 				<?php $content_display = $pixgraphy_settings['pixgraphy_blog_content_layout'];
 					if($content_display == 'fullcontent_display'):
@@ -52,7 +52,7 @@ if($pixgraphy_settings['pixgraphy_photography_layout'] != 'photography_layout'){
 						the_excerpt();
 					endif; ?>
 			</div> <!-- end .entry-content -->
-			<?php 
+			<?php
 				$excerpt = get_the_excerpt();
 				$content = get_the_content();
 				$disable_entry_format = $pixgraphy_settings['pixgraphy_entry_format_blog'];
@@ -60,14 +60,14 @@ if($pixgraphy_settings['pixgraphy_photography_layout'] != 'photography_layout'){
 					<footer class="entry-footer">
 						<?php if($disable_entry_format !='show-button'){ ?>
 						<span class="cat-links">
-						<?php esc_html_e('Category : ','pixgraphy');  the_category(', '); ?>
+						<?php esc_html_e('Темы : ','pixgraphy');  the_category(', '); ?>
 						</span> <!-- end .cat-links -->
 						<?php $tag_list = get_the_tag_list( '', __( ', ', 'pixgraphy' ) );
 							if(!empty($tag_list)){ ?>
 							<span class="tag-links">
 							<?php   echo $tag_list; ?>
 							</span> <!-- end .tag-links -->
-							<?php } 
+							<?php }
 						}
 						$pixgraphy_tag_text = $pixgraphy_settings['pixgraphy_tag_text'];
 						if(strlen($excerpt) < strlen($content) && $disable_entry_format !='hide-button'){ ?>
@@ -87,7 +87,7 @@ if($pixgraphy_settings['pixgraphy_photography_layout'] != 'photography_layout'){
 <?php } else {  ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('post-container pixgraphy-animation fadeInUp');?>>
 		<div class="post-column">
-		<?php 
+		<?php
 		if( has_post_thumbnail()) {
 			$image = '';
 			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
@@ -106,7 +106,7 @@ if($pixgraphy_settings['pixgraphy_photography_layout'] != 'photography_layout'){
 					<?php the_excerpt();?>
 				</div>
 				<!-- end .entry-content -->
-				<?php 
+				<?php
 					$entry_format_meta_blog = $pixgraphy_settings['pixgraphy_entry_meta_blog'];
 					if($entry_format_meta_blog == 'show-meta' ){?>
 					<div class="entry-meta">
