@@ -31,7 +31,7 @@ add_filter('excerpt_length', 'pixgraphy_excerpt_length');
 
 /********************* CONTINUE READING LINKS FOR EXCERPT *********************************/
 function pixgraphy_continue_reading() {
-	 return '&hellip; '; 
+	 return '&hellip; ';
 }
 add_filter('excerpt_more', 'pixgraphy_continue_reading');
 
@@ -82,7 +82,7 @@ function pixgraphy_social_links() { ?>
 			echo '<li><a target="_blank" href="'.esc_url($pixgraphy_settings['pixgraphy_social_pinterest']).'"><i class="fa fa-pinterest-p"></i></a></li>';
 		endif;
 		if( !empty($pixgraphy_settings['pixgraphy_social_dribbble']) ):
-			echo '<li><a target="_blank" href="'.esc_url($pixgraphy_settings['pixgraphy_social_dribbble']).'"><i class="fa fa-dribbble"></i></a></li>';
+			echo '<li><a target="_blank" href="'.esc_url($pixgraphy_settings['pixgraphy_social_dribbble']).'"><i class="fa fa-vk"></i></a></li>';
 		endif;
 		if( !empty($pixgraphy_settings['pixgraphy_social_instagram']) ):
 			echo '<li><a target="_blank" href="'.esc_url($pixgraphy_settings['pixgraphy_social_instagram']).'"><i class="fa fa-instagram"></i></a></li>';
@@ -123,10 +123,10 @@ function pixgraphy_page_sliders() {
 	if($query->have_posts() && get_option( 'sticky_posts' )){
 			$pixgraphy_page_sliders_display = '';
 			$pixgraphy_page_sliders_display 	.= '<div class="main-slider clearfix"> <div class="layer-slider">';
-					
+
 					$j=1; $i=0;
 			while ($query->have_posts()):$query->the_post();
-			
+
 			$attachment_id = get_post_thumbnail_id();
 			$image_attributes = wp_get_attachment_image_src($attachment_id,'pixgraphy_slider_image');
 						$i++;
@@ -146,7 +146,7 @@ function pixgraphy_page_sliders() {
 					}else{
 						$pixgraphy_page_sliders_display 	.= '<article class="slider-content clearfix">';
 					}
-				
+
 				$remove_link = $pixgraphy_settings['pixgraphy_slider_link'];
 					if($remove_link == 0){
 						if ($title_attribute != '') {
@@ -166,7 +166,7 @@ function pixgraphy_page_sliders() {
 				$pixgraphy_page_sliders_display 	.='</div><!-- end .image-slider -->';
 				$pixgraphy_page_sliders_display 	.='</div><!-- end .slides -->';
 				$j++;
-			
+
 			endwhile;
 			wp_reset_postdata();
 			$pixgraphy_page_sliders_display .= '</div>	  <!-- end .layer-slider -->
@@ -207,7 +207,7 @@ function pixgraphy_scripts() {
 	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'pixgraphy-html5', 'conditional', 'lt IE 9' );
-	
+
 	wp_style_add_data('pixgraphy-ie', 'conditional', 'lt IE 9');
 	if( $pixgraphy_settings['pixgraphy_responsive'] == 'on' ) {
 		wp_enqueue_style('pixgraphy-responsive', get_template_directory_uri().'/css/responsive.css');
